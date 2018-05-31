@@ -12,10 +12,10 @@
 
 	<h1 align="center">Student Registration</h1>
 
-
+<input type="text" id="txtId" name="txtId" >
 	Student Name
 	<input type="text" id="txtName" name="txtName">
-	<br> Student Name
+	<br> Address
 	<br> No :
 	<input type="text" id="adNo" name="adNo">
 	<br> Street :
@@ -31,17 +31,17 @@
 	<br>
 	<br>
 	<input type="button" onClick="register()" value="Save Student"
-		name="btnSave">
+		name="btnSave" id="btnSave">
+	<input type="button" onClick="updateStudent()" value="Update Student"
+		name="btnUpdate" id="btnUpdate" >
 	<h1 align="center">All Student</h1>
-	<table id="stuTable">
+	<table id="stuTable" border="1">
 		<tr>
 			<th>Student ID</th>
 			<th>Student Name</th>
-			<th>NO</th>
-			<th>Street</th>
-			<th>City</th>
-			<th></th>
-			<th></th>
+			<th>Address</th>
+			<th colspan="2">Action</th>
+
 		</tr>
 
 	</table>

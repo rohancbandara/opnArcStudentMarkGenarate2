@@ -67,6 +67,7 @@ public class StudentDAOImpl extends DbConnection implements StudentDAO {
 		try {
 			String sql = "DELETE FROM tblStudent WHERE stuId='" + student.getStuId() + "'";
 			putData(sql);
+			System.out.println("delete Ok !");
 			return true;
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -81,7 +82,7 @@ public class StudentDAOImpl extends DbConnection implements StudentDAO {
 		// TODO Auto-generated method stub
 		try {
 			String sql = "UPDATE tblStudent set stuName='" + student.getStuName() + "',adNo='" + student.getAdNo()
-					+ "',adStreet1='" + student.getAdStreet() + "',adCity='"
+					+ "',adStreet='" + student.getAdStreet() + "',adCity='"
 					+ student.getAdCity() + "',clId='" + student.getClID() + "' WHERE stuId='" + student.getStuId()
 					+ "'";
 			putData(sql);
@@ -133,8 +134,7 @@ public class StudentDAOImpl extends DbConnection implements StudentDAO {
 				stu.setStuId(rs.getInt("stuId"));
 				stu.setStuName(rs.getString("stuName"));
 				stu.setAdNo(rs.getString("adNo"));
-				stu.setAdStreet(rs.getString("adStreet1"));
-				
+				stu.setAdStreet(rs.getString("adStreet"));
 				stu.setAdCity(rs.getString("adCity"));
 				stu.setClID(rs.getInt("clId"));
 
