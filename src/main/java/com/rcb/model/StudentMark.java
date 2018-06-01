@@ -15,7 +15,14 @@ private double subMark4;
 private int subId5;
 private double subMark5;
 private int clId;
+private double mark;
 
+public double getMark() {
+	return mark;
+}
+public void setMark(double mark) {
+	this.mark = mark;
+}
 public int getClId() {
 	return clId;
 }

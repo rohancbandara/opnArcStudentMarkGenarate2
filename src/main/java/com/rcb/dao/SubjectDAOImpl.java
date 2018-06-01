@@ -38,11 +38,7 @@ public class SubjectDAOImpl extends DbConnection implements SubjectDAO {
 				sub.setSubName(rs.getString("subName"));
 				subjectList.add(sub);
 			}
-			ArrayList<Subject> viewSublecs = (ArrayList<Subject>) subjectList;
-			for (int i = 0; i < subjectList.size(); i++) {
-				System.out.println(viewSublecs.get(i).getSubId());
-				System.out.println(viewSublecs.get(i).getSubName());
-			}
+			
 			return subjectList;
 
 		} catch (Exception e) {

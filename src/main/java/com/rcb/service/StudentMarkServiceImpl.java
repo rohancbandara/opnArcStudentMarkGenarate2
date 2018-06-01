@@ -45,7 +45,7 @@ public class StudentMarkServiceImpl implements StudentMarkService {
 	@Override
 	public List<StudentMark> listSelectedStudentMark(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return studentMarkDAO.listSelectedStudentMark(id);
 	}
 
 	public StudentMark createStudentMark(StudentMark stumark) {

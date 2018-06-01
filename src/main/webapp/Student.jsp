@@ -10,7 +10,7 @@
 </head>
 <body>
 
-	<h1 align="center">Student Registration</h1>
+	<h1 align="left">Student Registration</h1>
 
 <input type="text" id="txtId" name="txtId" >
 	Student Name
@@ -34,7 +34,7 @@
 		name="btnSave" id="btnSave">
 	<input type="button" onClick="updateStudent()" value="Update Student"
 		name="btnUpdate" id="btnUpdate" >
-	<h1 align="center">All Student</h1>
+	<h1 align="left">All Student</h1>
 	<table id="stuTable" border="1">
 		<tr>
 			<th>Student ID</th>
