@@ -3,6 +3,8 @@ $(document).ready(function() {
 	
 	allStudent();
 	allSubject();
+	allStudentMarks();
+	getClassTops();
 	// selectIndex();
 
 });
@@ -104,13 +106,68 @@ function addMark(){
 		},
 
 		success : function(data) {
-			
+			allStudentMarks();
 
 		},
 		error : function(data) {
 			console.log(data);
 		},
-
+		
 	});
+	clear();
 	
+	allStudentMarks();
+	
+}
+function clear() {
+	$('#txtSubId0').val('');
+	$('#txtSubId1').val('');
+	$('#txtSubId2').val('');
+	$('#txtSubId3').val('');
+	$('#txtSubId4').val('');
+	
+	allStudentMarks();
+}
+
+function allStudentMarks() {
+	$('#tblMark tr').remove();
+	$.ajax({
+		url : "/opnArcAssingment02/student",
+		type : "POST",
+		dataType : "json",
+		data : {},
+		success : function(data) {
+			// console.log(data[1].stuName);
+			for (i = 0; i < data.length; i++) {
+				$('#tblMark').append(
+						
+						"<tr>" + "<td>" + data[i].stuName + "</td>" + "<td>"
+						+ data[i].avgMark + "</td>"
+						)
+			}
+
+		},
+		error : function(x) {
+			alert("Error");
+		}
+	});
+}
+
+function getClassTops(){
+	$.ajax({
+		url : "/opnArcAssingment02/mark",
+		type : "POST",
+		dataType : "json",
+		data : {},
+		success : function(data) {
+
+			for (var i = 0; i < data.length; i++) {
+				 console.log(data[i].subId);
+				
+				$('#div3').append(
+						"<lable>Name =" + data[i].stuName + "</lable> </br>"+
+				        "<lable>Mark =" + data[i].avgMark+ "</lable>");
+			}
+		},
+	});
 }

@@ -18,5 +18,5 @@ public interface StudentMarkDAO {
 
 	public List<StudentMark> listSelectedStudentMark(int id);
 
-	public Student getClassTop(Student student);
+	public List<Student> getClassTop();
 }

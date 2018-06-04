@@ -71,11 +71,12 @@ public class StudentMarkServiceImpl implements StudentMarkService {
 	}
 
 	@Override
-	public boolean getClassTop(Student student) {
+	public List<Student> getClassTop() {
 		// TODO Auto-generated method stub
-		studentMarkDAO.getClassTop(createStudent(student));
-		return false;
+		return studentMarkDAO.getClassTop();
 	}
+
+	
 
 
 }

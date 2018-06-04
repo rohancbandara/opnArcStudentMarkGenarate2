@@ -18,5 +18,6 @@ public interface StudentMarkService {
 
 	public List<StudentMark> listSelectedStudentMark(int id);
 	
-	public boolean getClassTop(Student student);
+	public List<Student> getClassTop();
+	
 }

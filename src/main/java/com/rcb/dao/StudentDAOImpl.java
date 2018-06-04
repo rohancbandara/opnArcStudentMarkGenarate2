@@ -42,7 +42,7 @@ public class StudentDAOImpl extends DbConnection implements StudentDAO {
 				
 				stu.setAdCity(rs.getString("adCity"));
 				stu.setClID(rs.getInt("clId"));
-
+				stu.setAvgMark(rs.getDouble("avgMark"));
 				listStudent.add(stu);
 
 			}
@@ -137,6 +137,7 @@ public class StudentDAOImpl extends DbConnection implements StudentDAO {
 				stu.setAdStreet(rs.getString("adStreet"));
 				stu.setAdCity(rs.getString("adCity"));
 				stu.setClID(rs.getInt("clId"));
+				stu.setAvgMark(rs.getDouble("avgMark"));
 
 				selectedStudent.add(stu);
 

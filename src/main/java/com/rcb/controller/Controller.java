@@ -105,7 +105,7 @@ public class Controller extends HttpServlet {
 		StudentMarkService studentMarkService=new StudentMarkServiceImpl();
 		student.setClID(2);
 		
-		studentMarkService.getClassTop(student);
+		//studentMarkService.getClassTop(student);
 		
 		
 	}

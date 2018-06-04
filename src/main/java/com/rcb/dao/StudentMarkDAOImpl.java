@@ -167,17 +167,27 @@ public class StudentMarkDAOImpl extends DbConnection implements StudentMarkDAO {
 		System.out.println(d.getAvg(1));
 	}
 
-	@Override
-	public Student getClassTop(Student student) {
-		// TODO Auto-generated method stub
+	
 
+	@Override
+	public StudentMark getStudent(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Student> getClassTop() {
+
+		// TODO Auto-generated method stub
+		List<Student> classTops=new ArrayList<>();
 		try {
 			String sql = "SELECT stuName,avgMark  FROM tblstudent  WHERE avgMark = (SELECT MAX(avgMark) FROM tblstudent WHERE  clId='"
-					+ student.getClID() + "') ";
+					+ 1 + "') ";//student.getClID()
 			ResultSet rs = getData(sql);
 			while (rs.next()) {
 				newSudent.setAvgMark(rs.getDouble("avgMark"));
 				newSudent.setStuName(rs.getString("stuName"));
+				classTops.add(newSudent);
 			}
 			System.out.println(newSudent.getAvgMark());
 			System.out.println(newSudent.getStuName());
@@ -185,13 +195,7 @@ public class StudentMarkDAOImpl extends DbConnection implements StudentMarkDAO {
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		return newSudent;
-	}
-
-	@Override
-	public StudentMark getStudent(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return classTops;
 	}
 
 }
